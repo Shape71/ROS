@@ -1,0 +1,42 @@
+controller_manager:
+    ros__parameters:
+        update_rate: 60
+
+        joint_state_broadcaster:
+            type: joint_state_broadcaster/JointStateBroadcaster
+            
+brover_controller:
+    ros__parameters:
+        type: diff_drive_controller/DiffDriveController
+
+        # Geometry
+        left_wheel_names: ["lf_wheel_joint", "lr_wheel_joint"]
+        right_wheel_names: ["rf_wheel_joint", "rr_wheel_joint"]
+        wheel_separation: 0.4
+        wheel_radius: 0.1
+
+        # cmd_vel
+        cmd_vel_timeout: 0.2
+
+        # odom
+        publish_rate: 50.0
+        open_loop: false
+        enable_odom_tf: true
+        odom_frame_id: odom
+        base_frame_id: base_link
+        pose_covariance_diagonal : [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+        twist_covariance_diagonal: [0.001, 0.001, 0.001, 0.001, 0.001, 0.01]
+        velocity_rolling_window_size: 2
+
+        # cmd_vel_out
+        publish_limited_velocity: true
+
+range_sensor_broadcaster:
+    ros__parameters:
+        type: range_sensor_broadcaster/RangeSensorBroadcaster
+        
+        sensor_name: ["LidarT1"]
+        frame_id: ["base_scan"]
+        radiation_type: [1]
+        field_of_view: [4.712]
+        max_range: [50]

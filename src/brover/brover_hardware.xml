@@ -1,0 +1,11 @@
+<library path="brover_hardware">
+    <class name="brover_hardware/BroverSystemHardware"
+           type="brover_hardware::BroverSystemHardware"
+           base_class_type="hardware_interface::SystemInterface">
+
+        <description>
+            TODO
+        </description>
+
+    </class>
+</library>

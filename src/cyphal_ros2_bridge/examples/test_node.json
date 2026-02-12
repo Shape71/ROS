@@ -1,0 +1,31 @@
+{
+    "node_id": 33,
+    "interface": "vcan0",
+    "connections": [
+        {
+            "type": "Integer32",
+            "cyphal": {
+                "port": {
+                    "read": 1808,
+                    "write": 1811
+                }
+            },
+            "ros": {
+                "type": "topic",
+                "direction": "bi",
+                "name": "/data"
+            }
+        },
+        {
+            "type": "Echo",
+            "cyphal": {
+                "port": 248,
+                "node": 9
+            },
+            "ros": {
+                "type": "service",
+                "name": "/echo"
+            }
+        }
+    ]
+}
